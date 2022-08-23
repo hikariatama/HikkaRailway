@@ -8,6 +8,7 @@ RUN rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp/*
 RUN git clone https://github.com/hikariatama/Hikka /Hikka
 WORKDIR /Hikka
 RUN pip install --no-warn-script-location --no-cache-dir -r requirements.txt
+RUN pip install --no-warn-script-location --no-cache-dir redis
 EXPOSE 8080
 RUN mkdir /data
 CMD ["python3", "-m", "hikka"]
